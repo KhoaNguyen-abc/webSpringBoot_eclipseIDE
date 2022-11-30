@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Student
+  </title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td>STT</td>
+				<td>Name</td>
+				<td>Phone</td>
+				<td>Action</td>
+			</tr>
+		</thead>
+		<tbody>
+			<th:block th:each="student: ${stdList}">
+			<tr>
+				<td th:text="${index}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.phone}"></td>
+				<td ><a th:href="@{./all(id=${student.id})}">Sửa</a></td>
+				<td><a th:href="@{'./'+${student.id}+'/delete'}">Xóa</a></td>
+			</tr>
+			</th:block>
+		</tbody>
+	</table>
+	<form name="form" th:action="@{./add}" th:object="${stdent}" method="POST">
+		<input type="number" name="id" th:field="*{id}" hidden>
+		<input type="text" name="name" th:field="*{name}" th:value="*{name}">
+		<input type="text" name="phone" th:field="*{phone}" th:value="*{phone}">
+		<button type="submit">Thêm mới</button>
+	</form>
+	</br>
+	<span th:text="${stdent.name}"></span>
+	<span th:text="${stdList}"></span>
+</body>
+</html>

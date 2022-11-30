@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.example.model.Vegetable" table="VEGETABLE">
+      <meta attribute="class-description">
+         Lớp này chứa chi tiết về vegetable. 
+      </meta>
+      <id name="vegetableID" type="int" column="VegetableID">
+         <generator class="increment"/>
+      </id>
+      <property name="catagoryID" column="CatagoryID" type="int"/>
+      <property name="vegetableName" column="VegetableName" type="string"/>
+      <property name="unit" column="Unit" type="string"/>
+      <property name="amount" column="Amount" type="int"/>
+      <property name="image" column="Image" type="string"/>
+      <property name="price" column="Price" type="float"/>
+      <many-to-one name="category" column="CatagoryID" class="com.example.model.Category" insert="false" update="false"></many-to-one>
+      <set name="orderVegetableList" cascade="save-update" table="ORDERDETAIL">
+      	<key column="VegetableID"></key>
+      	<many-to-many column="OrderID" class="com.example.model.Order"></many-to-many>
+      </set>
+   </class>
+</hibernate-mapping>

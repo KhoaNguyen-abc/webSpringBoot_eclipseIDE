@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="./../BanHang/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="./../BanHang/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="./../BanHang/css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="grey lighten-3">
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="./../../">
+        <strong class="blue-text">VEGETABLES</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="./../../">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="./product">Product</a>
+          </li>
+          <li class="nav-item" id="HrefLogin">
+            <a class="nav-link waves-effect" href="./login">Log in</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+          	 <span class="badge red z-depth-1 mr-1" id="fullname"></span>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="./checkout">
+              <span class="badge red z-depth-1 mr-1 quantityCart"> 0 </span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container wow fadeIn">
+
+      <!-- Heading -->
+      <h2 class="my-5 h2 text-center">Checkout form</h2>
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-8 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!--Card content-->
+            <form class="card-body" th:action="@{./checkout/add}" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-2">
+
+                  <!--firstName-->
+                  <div class="md-form ">
+                    <input type="text" id="firstName" class="form-control">
+                    <label for="firstName" class="">First name</label>
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-2">
+
+                  <!--lastName-->
+                  <div class="md-form">
+                    <input type="text" id="lastName" class="form-control">
+                    <label for="lastName" class="">Last name</label>
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Username-->
+              <div class="md-form input-group pl-0 mb-5">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <!--email-->
+              <div class="md-form mb-5">
+                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <label for="email" class="">Email (optional)</label>
+              </div>
+
+              <!--address-->
+              <div class="md-form mb-5">
+                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+                <label for="address" class="">Address line 1</label>
+              </div>
+
+              <!--address-2-->
+              <div class="md-form mb-5">
+                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
+                <label for="address-2" class="">Address line 2</label>
+              </div>
+
+              <!--Grid row-->
+              <div class="row">
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4">
+
+                  <label for="country">Town</label>
+                  <select class="custom-select d-block w-100" id="town" required>
+                    
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid town.
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                  <label for="state">Larger city/ province</label>
+                  <select class="custom-select d-block w-100" id="province" required>
+                   
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                  <label for="zip">Zip</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+              
+              <!-- INPUT ORDER DETAILS -->
+				<div style="display: none">
+					<input type="text" name="customerID" value="0"/>
+					<input type="text" name="total" value="0"/>
+					<div id="VegetableOrderDetails">
+						
+					</div>
+				</div>
+
+              <hr>
+              <hr class="mb-4">
+              	<button class="btn btn-primary btn-lg btn-block" type="submit" id="btnCheckOut" disabled onclick="Message()">Continue to checkout</button>
+            </form>
+
+          </div>
+          <!--/.Card-->
+          
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-4 mb-4">
+
+          <!-- Heading -->
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill quantityCart"> 0</span>
+          </h4>
+
+          <!-- Cart -->
+          <ul class="list-group mb-3 z-depth-1" id="Cart">
+          </ul>
+          <!-- Cart -->
+          
+          <!-- Message purchase order complete -->
+          <h1 class="font-weight-normal" th:text="${messegePurchase}"></h1>
+          
+        </div>
+        <!--Grid column-->
+		
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="#"> Vegetables.com </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="./../BanHang/js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="./../BanHang/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="./../BanHang/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="./../BanHang/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+  
+  <!-- SCRIPTS GET CART BY COOKIE -->
+  <script type="text/javascript">
+	//Create our number formatter.
+	  const formatter = new Intl.NumberFormat('en-US', {
+	    style: 'currency',
+	    currency: 'USD',
+	
+	    // These options are needed to round to whole numbers if that's what you want.
+	    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+	    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+	  });
+	  function getCookie(cname) {
+		  let name = cname + "="
+		  let decodedCookie = decodeURIComponent(document.cookie)
+		  let ca = decodedCookie.split(';')
+		  for(let i = 0; i <ca.length; i++) {
+		    let c = ca[i]
+		    while (c.charAt(0) == ' ') {
+		      c = c.substring(1)
+		    }
+		    if (c.indexOf(name) == 0) {
+		      return c.substring(name.length, c.length)
+		    }
+		  }
+		  return ""
+		}
+	  
+	  	document.getElementById("btnCheckOut").disabled = true
+	  
+	  	let userCookie = getCookie('User')
+		let userJSON = JSON.parse(userCookie)
+		
+		if(userJSON != null || userJSON.length > 0){
+  			document.getElementById("fullname").innerText = userJSON.username
+  			document.getElementById("HrefLogin").innerHTML =`
+  				<li class="nav-item" id="HrefLogOut">
+  	            	<a class="nav-link waves-effect" href="./logout">Log out</a>
+  	          	</li>
+  			`
+  			let address = userJSON.address.replaceAll("+", " ")
+  			let city = userJSON.city.replaceAll("+", " ")
+  			
+  			document.getElementById("town").innerHTML += `
+  				<option value="">Choose...</option>
+  	            <option value="${address}">${address}</option>
+  			`
+  			
+  			document.getElementById("province").innerHTML += `
+  				<option value="">Choose...</option>
+  	            <option value="${city}">${city}</option>
+  			`
+  			
+  			document.getElementById("btnCheckOut").disabled = true
+  		}
+		
+  		let cartCookie = getCookie('cart')
+  		let cartJSON = JSON.parse(cartCookie)
+  		
+  		let vegetableInputHTML = "";
+  		let cartItemHTML = ""
+  		let total = 0
+  		
+  		for(let i=0; i < cartJSON.length; i++){
+  			
+  			let strVegetableJSON = cartJSON[i].Vegetable.replaceAll("+", " ")+"}"
+  	  		let vegetableJSON = JSON.parse(strVegetableJSON)
+  			let price = formatter.format(vegetableJSON.price)
+  			total += vegetableJSON.price * cartJSON[i].Quantity;
+ 
+  			cartItemHTML += `
+  				<li class="list-group-item d-flex justify-content-between lh-condensed">
+  	            <div>
+  	              <h6 class="my-0 text-capitalize">${vegetableJSON.vegetableName}</h6>
+  	              <small class="text-muted">${vegetableJSON.category.Category.description}</small>
+  	            </div>
+  	            <div class="text-break">
+  	            	<span class="text-muted">${price}</span>
+  	            	<span class="text-muted">Quantity: ${cartJSON[i].Quantity}</span>
+  	            </div>
+	  	        <div class="text-break">
+	  	      		<a href="./checkout/delete?index=${i}">
+		            	<button type="button" class="btn btn-danger"> X </button>
+	            	</a>
+	            </div>
+  	          </li>
+  			`
+  		}
+  			
+  		document.getElementById("Cart").innerHTML += cartItemHTML
+  		let totalPrice = formatter.format(total)
+  		
+  		document.getElementById("Cart").innerHTML += `
+  			<li class="list-group-item d-flex justify-content-between lh-condensed">
+  			<div>
+  				<span class="text-right text-muted font-weight-normal">Total: ${totalPrice}</span>
+            </div>
+  			</li>
+  		`
+  		
+  		let quantityCart = document.getElementsByClassName("quantityCart")
+  		for(let i=0; i < quantityCart.length; i++){
+  			quantityCart[i].innerText = cartJSON.length
+  		}
+  		
+  		if((cartJSON != null && cartJSON.length > 0) || (userJSON != null && userJSON.length > 0)){
+  			$("input[name='customerID']").val(userJSON.customerID)
+  			$("input[name='total']").val(total)
+  			for(let i=0; i < cartJSON.length; i++){
+  				let strVegetableJSON = cartJSON[i].Vegetable.replaceAll("+", " ")+"}"
+  	  	  		let vegetableJSON = JSON.parse(strVegetableJSON)
+  				vegetableInputHTML +=`
+  					<input type="text" class="form-control" name="VegetableID" value="${vegetableJSON.vegetableID}"/>
+  					<input type="text" class="form-control" name="Quantity" value="${cartJSON[i].Quantity}"/>
+  					<input type="text" class="form-control" name="Price" value="${vegetableJSON.price}"/>
+  				`
+  			}	
+			document.getElementById("VegetableOrderDetails").innerHTML += vegetableInputHTML
+			document.getElementById("btnCheckOut").disabled = false
+			
+  		}
+  </script>
+</body>
+
+</html>

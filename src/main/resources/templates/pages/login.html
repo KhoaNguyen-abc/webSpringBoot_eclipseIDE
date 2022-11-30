@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="./../BanHang/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="./../BanHang/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="./../BanHang/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="./../">
+        <strong class="blue-text">VEGETABLES</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="./../">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="./product">Product</a>
+          </li>
+          <li class="nav-item active" id="HrefLogin">
+            <a class="nav-link waves-effect">Log in</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+          	 <span class="badge red z-depth-1 mr-1" id="fullname"></span>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+<form class="container center_div" th:action="@{./login/success}" style="width: 420px; padding-top: 10px" method="GET">
+<h1 class="text-center">LOG IN</h1>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="text" class="form-control" name="customerID"/>
+    <label class="form-label" for="form1Example1">Customer ID</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" class="form-control" name="password"/>
+    <label class="form-label" for="form1Example2">Password</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col">
+      <!-- Simple link -->
+      <a href="./register">Forgot password?</a>
+    </div>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+</form>
+  </main>
+  <!--Main layout-->
+
+ <!-- SCRIPTS -->
+ <!-- JQuery -->
+ <script type="text/javascript" src="./../BanHang/js/jquery-3.4.1.min.js"></script>
+ <!-- Bootstrap tooltips -->
+ <script type="text/javascript" src="./../BanHang/js/popper.min.js"></script>
+ <!-- Bootstrap core JavaScript -->
+ <script type="text/javascript" src="./../BanHang/js/bootstrap.min.js"></script>
+ <!-- MDB core JavaScript -->
+ <script type="text/javascript" src="./../BanHang/js/mdb.min.js"></script>
+ <!-- Initializations -->
+ <script type="text/javascript">
+   // Animations initialization
+   new WOW().init();
+   
+ </script>
+ 
+</body>
+</html>

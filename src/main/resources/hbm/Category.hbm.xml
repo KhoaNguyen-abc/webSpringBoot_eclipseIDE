@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.example.model.Category" table="CATEGORY">
+      <meta attribute="class-description">
+         Lớp này chứa chi tiết về category. 
+      </meta>
+      <id name="catagoryID" type="int" column="CatagoryID">
+         <generator class="increment"/>
+      </id>
+      <property name="name" column="Name" type="string"/>
+      <property name="description" column="Description" type="string"/>
+      <set name="vegetableList" cascade="all">
+      	<key column="CatagoryID"></key>
+      	<one-to-many class="com.example.model.Vegetable"/>
+      </set>
+   </class>
+</hibernate-mapping>

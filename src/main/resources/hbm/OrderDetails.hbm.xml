@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.example.model.OrderDetails" table="ORDERDETAIL">
+      <meta attribute="class-description">
+         Lớp này chứa chi tiết về order details. 
+      </meta>
+      <composite-id>
+      	<key-property name="orderID" type="int" column="OrderID"></key-property>
+      	<key-property name="vegetableID" type="int" column="VegetableID"></key-property>
+      </composite-id>
+      <property name="quantity" column="Quantity" type="int"/>
+      <property name="price" column="Price" type="float"/>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+   <class name="com.example.model.Customer" table="CUSTOMERS">
+      <meta attribute="class-description">
+         Lớp này chứa chi tiết về customers. 
+      </meta>
+      <id name="customerID" type="int" column="CustomerID">
+         <generator class="increment"/>
+      </id>
+      <property name="password" column="Password" type="string"/>
+      <property name="fullname" column="Fullname" type="string"/>
+      <property name="address" column="Address" type="string"/>
+      <property name="city" column="City" type="string"/>
+      <set name="orderList" cascade="all">
+      	<key column="CustomerID"></key>
+      	<one-to-many class="com.example.model.Order"/>
+      </set>
+   </class>
+</hibernate-mapping>
